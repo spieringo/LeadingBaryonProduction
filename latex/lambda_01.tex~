@@ -1,0 +1,336 @@
+\documentclass[a4paper,12pt]{article} %{report}
+%\documentclass[showpacs,fleqn,nobibnotes,twocolumn]{revtex4}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage{fixmath} %mathbold
+\usepackage{amssymb}
+%\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc} %escrever acentos sem usar macros: aceita 'â' no lugar de '\^a'
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{colorlinks,citecolor={green!70!black},filecolor=magenta,linkcolor={red!50!black},urlcolor=cyan} %para eletrônico
+\addtolength{\textheight}{6cm} %aumenta o espaço vertical do corpo do texto   6
+\addtolength{\voffset}{-3.5cm} %começa a escrever mais em cima na página      -3.5
+\addtolength{\textwidth}{6cm} %aumenta o espaço horizontal do corpo do texto  6
+\addtolength{\hoffset}{-3cm} %começa a escrever mais a esquerda na página     -3
+\setlength\arraycolsep{1.3pt} %reduz espaços quando usar & = &
+\newcommand{\brel}{{\bm b}_{rel}}
+\newcommand{\pt}{{\bm p}_{t}}
+\newcommand{\rr}{{\bm r}}
+\newcommand{\qq}{{q\bar q}}
+\newcommand{\diego}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\begin{center}
+\begin{flushleft}
+ \textcolor{red}{\today}  
+\end{flushleft}
+\vspace{-0.95cm}
+\begin{flushright}
+  \textcolor{red}{\textbf{K\_09}}
+\end{flushright}
+\vspace{0.2cm}
+
+\texttt{Artigo base:}
+\textbf{Target Fragmentation in $\mathbold{pp}$, $\mathbold{ep}$ 
+and $\mathbold{\gamma p}$ Collisions at High Energies}\\
+\textit{U. D'Alesio and H.J. Pirner}\\
+\href{https://arxiv.org/abs/hep-ph/9806321v3}{arXiv:9806321v3 [hep-ph] 26 Jan 2000}
+\end{center}
+
+\section{Densidade nêutron-píon}
+A densidade nêutron-píon em função da separação relativa entre as partículas é dada por
+\begin{eqnarray}
+  \rho_{n\pi} (z,\brel) = \sum_i \left| \psi^i_{n\pi}(z,\brel)  \right|^2\,,
+\end{eqnarray}
+onde $\psi$ é a amplitude no espaço de parâmetro de impacto,
+\begin{eqnarray}
+  \psi^i_{n\pi}(z,\brel) = \frac{1}{2\pi}\int d^{\,2}\pt e^{i\brel\cdot\pt}\phi_{n\pi}^i(z,\pt)
+  = \frac{1}{2\pi}\int p_tdp_t
+  \int_0^{2\pi} d\varphi e^{ib_{rel}p_t\cos\varphi} 
+  %\underbrace{\left( \int_0^{2\pi} d\theta e^{ib_{rel}p_t\cos\theta} \right)}_{=2\pi J_0(b_{rel}p_t)}
+  \phi_{n\pi}^i(z,\pt)\,,
+\end{eqnarray}
+onde $\phi_{n\pi}^i = \sqrt{2/3}\phi_{N\pi}^{\lambda\lambda'}$.
+A quantidade $\phi_{BM}^{\lambda\lambda'}(z,\pt)$ descreve
+a amplitude de probabilidade de encontrar, dentro de um nucleon,
+um bárion $B$ com fração de momentum longitudinal $z$,
+momentum transverso $\pt$ e helicidade $\lambda$,
+e também, um méson $M$ com fração de momentum longitudinal $1\!-\!z$,
+momentum transverso $-\pt$ e helicidade $\lambda'$.
+Para um próton temos 
+\begin{eqnarray}
+  \phi_{N\pi}^{1/2,0}(z,\pt) &=& \sqrt{\frac{3}{\pi}}\frac{g}{4\pi}
+  \frac{1}{\sqrt{z^2(1-z)}}\frac{m_N(z-1)}{M_{N\pi}^2-m_N^2}\,,\\
+  \phi_{N\pi}^{-1/2,0}(z,\pt) &=& \sqrt{\frac{3}{\pi}}\frac{g}{4\pi}
+  \frac{1}{\sqrt{z^2(1-z)}}\frac{|\pt|e^{i\varphi}}{M_{N\pi}^2-m_N^2}\,,
+\end{eqnarray}
+onde
+\begin{eqnarray}
+  M_{N\pi}^2 = \frac{m_N^2+p_t^2}{z} + \frac{m_\pi^2+p_t^2}{1-z}\,.
+\end{eqnarray}
+No artigo é dado $g^2/4\pi=13.75$, mas não sei se esse é o $g_{p\pi p}$ ou $g_{p\pi n}$.
+Multiplicando $\phi_{N\pi}$ pelo fator de isospin e isolando $g^2/4\pi$, ficamos com
+\begin{eqnarray}
+  \phi_{n\pi}^{1/2,0}(z,\pt) &=& \sqrt{\frac{2}{3}}\sqrt{\frac{3}{\pi}}
+  \left( \sqrt{\frac{g^2}{4\pi}}\frac{1}{\sqrt{4\pi}}\right)
+  \frac{1}{\sqrt{z^2(1-z)}}\frac{m_N(z-1)}{M_{N\pi}^2-m_N^2}\\
+   &=& \frac{1}{\pi\sqrt{2}}\sqrt{\frac{g^2}{4\pi}} 
+   \frac{1}{\sqrt{z^2(1-z)}}\frac{m_N(z-1)}{M_{N\pi}^2-m_N^2}\,,\\
+  \phi_{n\pi}^{-1/2,0}(z,\pt) &=& \sqrt{\frac{2}{3}}\sqrt{\frac{3}{\pi}}
+  \left( \sqrt{\frac{g^2}{4\pi}}\frac{1}{\sqrt{4\pi}}\right)
+  \frac{1}{\sqrt{z^2(1-z)}}\frac{|\pt|e^{i\varphi}}{M_{N\pi}^2-m_N^2}\\
+   &=& \frac{1}{\pi\sqrt{2}}\sqrt{\frac{g^2}{4\pi}} 
+   \frac{1}{\sqrt{z^2(1-z)}}\frac{|\pt|e^{i\varphi}}{M_{N\pi}^2-m_N^2}\,.\\
+\end{eqnarray}
+Por fim, vamos incorporar o fator de forma $\pi NN$ fazendo
+\begin{eqnarray}
+  \phi^{\lambda\lambda'} \rightarrow \phi^{\lambda\lambda'} G(z,p_t)\,. 
+\end{eqnarray}
+Os dois modelos usados são
+\begin{eqnarray}
+  \text{light-cone form factor} \hspace{0.5cm}&\Rightarrow&\hspace{0.5cm} 
+  G = \exp\left[R^2_{cl}(m_N^2-M^2_{N\pi})\right]\\
+  \text{(Reggeized) covariant form factor}  \hspace{0.5cm}&\Rightarrow&\hspace{0.5cm} 
+  G =  \exp\left[R^2_{c}(t-m_{\pi}^2)\right](1-z)^{-t}  
+\end{eqnarray}
+onde os cut-offs são ajustados com os dados de $pp\rightarrow nX$
+e são dados por $R_{cl}^2 = 0.2 \text{ GeV}^{-2}$ e $R_{c}^2 = 0.05 \text{ GeV}^{-2}$,
+e o momentum transferido é
+\begin{eqnarray}
+  t = -\frac{1}{z}\left[ p_t^2+(1-z)^2m_N^2 \right] 
+  = (1-z) \left( m_N^2 - M_{N\pi}^2 \right) + m_\pi^2\,.
+\end{eqnarray}  
+\indent Nosso primeiro teste foi reproduzir a densidade $\rho_{n\pi} (z,\brel)$.
+O resultado abaixo (imagens da primeira linha) é idêntico ao do paper (Fig. 3):
+\begin{figure}[!h]
+ \centering
+ \includegraphics[scale=0.39]{rho_light}
+ \includegraphics[scale=0.39]{rho_covar}
+
+ \includegraphics[scale=0.39]{rho_f2}
+ \includegraphics[scale=0.39]{rho_f3}
+\end{figure}
+
+\indent Nas imagens da segunda linha temos densidade 
+$\rho_{n\pi} (z,\brel)$ com os modelos utilizados em nossos papers\footnote{
+  \indent Quanto ao modelo light-cone, nós também utilizamos a mesma expressão
+  em nossos papers. Ele equivale ao $f_1(z)$ trocando $R_{lc}^2=0.2\text{ GeV}^{-2}$
+  por $R^2=0.36\text{ GeV}^{-2}$.
+}. 
+Abaixo temos as expressões para $f_2$ e $f_3$.
+Em $f_2$ não há estrutura interna, apenas a ``reggeização'' é considerada.
+Já $f_3$ equivale ao $G$ cov-Regge com $R_c^2 = 0.05 \Rightarrow b = 0.3$.
+\begin{eqnarray}
+  f_2(z) \hspace{0.5cm}&\Rightarrow&\hspace{0.5cm} 
+  G = 1 \times (1-z)^{-t}\\
+  f_3(z)  \hspace{0.5cm}&\Rightarrow&\hspace{0.5cm} 
+  G =  \exp\left[b\,(t-m_{\pi}^2)\right](1-z)^{-t}   
+\end{eqnarray}
+\indent \diego{Será que não teríamos algum problema relacionado a normalização
+dos fatores de forma ao mudar os parâmetros?}
+
+\newpage
+\section{Seção de choque $pp\rightarrow nX$}
+\indent A seção de choque $pp\rightarrow nX$ é dada por
+\begin{eqnarray}
+  \frac{d\sigma^{pp\rightarrow nX}}{dz} = \int d^2\brel\rho_{n\pi} (z,\brel) \sigma^{p\pi^+}_{tot}
+  \left\{ 1 - \Lambda_{eff}^2 \frac{\sigma^{pn}_{tot}}{2\pi} \exp\left[ -\frac{\Lambda_{eff}^2\brel^2}{2} \right]\right\}\,,
+\end{eqnarray}
+onde $\Lambda_{eff}^2 = \Lambda_{p\pi}^2\Lambda_{pn}^2/(\Lambda_{p\pi}^2+\Lambda_{pn}^2)$.
+%\begin{eqnarray}
+%  \Lambda_{eff}^2 = \frac{\Lambda_{p\pi}^2\Lambda_{pn}^2}{\Lambda_{p\pi}^2+\Lambda_{pn}^2}\,. 
+%\end{eqnarray}
+Com os valores $\Lambda_{p\pi}^2\approx\Lambda_{pn}^2\approx 0.08\text{ GeV}^2$ ficamos com 
+$\Lambda_{eff}^2 = 0.04\text{ GeV}^2$.
+A seção de choque próton-píon é descrita como $2/3$ da seção de choque próton-núcleon.\\
+\indent Nos resultados que seguem nós utilizamos um valor fixo para $\sigma^{pn}_{tot}$,
+%$\sigma^{p\pi^+}_{tot}$, 
+seguindo o procedimento utilizado no paper.
+Não é dito no paper qual o valor de $\sigma^{pn}_{tot}$ ou a energia considerada,
+então, escolhemos dois valores para testar.
+O valor $\sigma^{pn}_{tot} = 43$ mb foi baseado em informações a respeito 
+da Fig. 4 do paper, onde utiliza-se a parametrização 
+$\sigma^{pp}_{tot} = 21.70(s)^{0.0808}+56.08(s)^{-0.4525}$ mb.
+Para $\sqrt{s}=53$ Gev temos $\sigma^{pp}_{tot} = 42.8$ mb.
+Já o valor $\sigma^{pn}_{tot} = 27$ mb foi escolhido na tentativa de reproduzir
+o resultado do paper.
+
+\begin{figure}[!h]
+ \begin{minipage}{0.49\textwidth}
+  \hspace{-0.2cm}\includegraphics[scale=0.4]{K_pp.eps}   
+ \end{minipage}
+ \begin{minipage}{0.49\textwidth}
+  \hspace{-0.7cm}\vspace{-0.2cm}\includegraphics[scale=0.88]{kabspp.ps}
+ \end{minipage}
+\end{figure}
+
+\newpage
+\section{Seção de choque $\gamma p\rightarrow nX$}
+\indent A seção de choque $\gamma p\rightarrow nX$,
+como dada pela expressão (25) do paper, é
+\begin{eqnarray}
+  \frac{d\sigma^{\gamma p\rightarrow nX}}{dz} = \int d^2\brel\rho_{n\pi} (z,\brel) 
+  \int d\alpha d^2\rr \big| \Psi_{\qq}(\alpha, \rr) \big|^2
+  \sigma^{\qq\pi^+}_{tot}(\rr,x_\pi)
+  \left\{ 1 - \Lambda_{eff}^2 \frac{\sigma^{\qq n}_{tot}(\rr,x_n)}{2\pi} 
+  \exp\left[ -\frac{\Lambda_{eff}^2\brel^2}{2} \right]\right\}\phantom{x}
+\end{eqnarray}
+onde denotamos por $\alpha$ e $\rr$ as variáveis do dipolo de cor e,
+seguindo a notação do paper, 
+\begin{eqnarray}
+  x = \frac{Q^2 + m_q^2}{Q^2 + W^2}\approx\frac{Q^2}{W^2},
+  \hspace{1.5cm} x_{\pi} = \frac{x}{1-z} \hspace{1.5cm}\text{e}
+  \hspace{1.5cm} x_{n} = \frac{x}{z} \,,
+\end{eqnarray}
+lembrando que na notação dos nosso artigos temos $x_L=z$ e $\hat x=x_{\pi}$.\\
+\indent No paper é utilizado
+\begin{eqnarray}
+  \Lambda_{eff}^2 = \frac{\Lambda_{\qq\pi}^2\Lambda_{\qq n}^2}{\Lambda_{\qq \pi}^2+\Lambda_{\qq n}^2}
+  \hspace{1cm}\text{com}\hspace{1cm}
+  \Lambda_{\qq\pi}^2 \approx \frac{4\pi}{\sigma^{\qq\pi}_{tot}}\hspace{1cm}\text{e}
+  \hspace{1cm}  \Lambda_{\qq n}^2 \approx \frac{4\pi}{\sigma^{\qq n}_{tot}}
+\end{eqnarray}
+sendo que no paper é utilizado $\sigma^{\qq n}_{tot}=\sigma^{\rho n}_{tot}\approx 30$ mb
+e $\sigma^{\qq\pi}_{tot}=(2/3)\sigma^{\qq n}_{tot}\approx 20$ mb:
+\begin{eqnarray}
+  \Lambda^2_{\qq\pi} = \frac{4\pi}{\sigma_{tot}^{\qq\pi}} = \frac{4\pi}{\frac{2}{3}\sigma_{tot}^{\qq n}}
+  \hspace{0.6cm}\Rightarrow\hspace{0.6cm}
+  \Lambda_{eff}^2 = \frac{3}{5}\Lambda^2_{n\pi} = \frac{12\pi}{5}\frac{1}{\sigma_{tot}^{\qq n}}
+  \approx 0.25\text{ mb}^{-1} \approx 0.098\text{ GeV}^{2},
+\end{eqnarray}
+quando nada for dito, este será o valor de $\Lambda_{eff}^2$ padrão nos resultados das próximas páginas.\\
+\indent Também testamos (cronologicamente, foi o nosso primeiro teste) a expressão (28) do paper:
+\begin{eqnarray}
+  \frac{d\sigma^{\gamma p\rightarrow nX}}{dz} = \int d^2\brel\rho_{n\pi} (z,\brel) \sigma^{\gamma\pi^+}_{tot}
+  \left\{ 1 - \Lambda_{eff}^2 \frac{\sigma_{eff}}{2\pi} \exp\left[ -\frac{\Lambda_{eff}^2\brel^2}{2} \right]\right\}\,,
+\end{eqnarray}
+onde
+\begin{eqnarray}
+  \sigma^{\gamma\pi^+}_{tot} = \langle \sigma^{\qq\pi^+}_{tot} \rangle = 
+  \int d\alpha d^2\rr \big| \Psi_{\qq}(\alpha, \rr) \big|^2 \sigma^{\qq\pi^+}_{tot}(\rr,x_\pi)
+  \hspace{1cm}\text{e}\hspace{1cm}
+  \sigma_{eff} = \frac{\langle \sigma^{\qq\pi^+}_{tot}\sigma^{\qq n}_{tot}\rangle}{\langle\sigma^{\qq\pi^+}_{tot} \rangle}
+\end{eqnarray}
+onde temos $\sigma_{eff}\approx 20$ mb para $Q^2=0$ (expressão (33) do paper).
+Utilizando a expressão acima para o cálculo de $K_{abs}$,
+vemos que a seção de choque $\sigma^{\gamma\pi^+}_{tot}$ é fatorada e cancelada.
+A título de curiosidade, utilizando GBW com $W=50\sim 100$ GeV e $Q^2=0$ obtemos
+$\sigma^{\gamma\pi^+}_{tot} \approx 0.2$ mb.
+
+\newpage
+\subsection{$K_{abs}$}
+Na imagem abaixo tentamos reproduzir a figura 9 do paper
+utilizando a expressão (28) do paper (figura superior)
+e a expressão (25) do paper (imagem inferior).
+
+\begin{figure}[!h]
+ \begin{minipage}{0.49\textwidth}
+  \includegraphics[scale=0.4]{K_gp_eff.eps}   
+ \end{minipage}
+ \begin{minipage}{0.49\textwidth}
+  \hspace{-0.7cm}\vspace{-0.2cm}\includegraphics[scale=0.88]{kabsgp.ps}
+ \end{minipage}
+\end{figure}
+\vspace{-1cm}
+\begin{figure}[!h]
+ \begin{minipage}{0.49\textwidth}
+  \includegraphics[scale=0.4]{K_gp_exp25.eps}   
+ \end{minipage}
+ \begin{minipage}{0.49\textwidth}
+  \hspace{-0.7cm}\vspace{-0.2cm}\includegraphics[scale=0.88]{kabsgp.ps}
+ \end{minipage}
+\end{figure}
+
+A título de curiosidade, abaixo temos o resultado acima
+em todo o range de $z$:
+\begin{figure}[!h]
+  \centering\includegraphics[scale=0.42]{K_gp_exp25_scale.eps}   
+\end{figure}
+
+\newpage
+\subsection{Comparação com os dados do H1}
+\indent A esquerda temos o resultado que usamos no nosso artigo
+e a direita o resultado com a expressão 25 do paper.
+
+\begin{figure}[!h]
+ \begin{minipage}{0.49\textwidth}
+  \includegraphics[scale=0.4]{sigma_dip_tese.eps}   
+ \end{minipage}
+ \begin{minipage}{0.49\textwidth}
+  \includegraphics[scale=0.4]{sigma_dados_exp25.eps}
+ \end{minipage}
+\end{figure}
+
+\subsection{Variando $\Lambda_{eff}^2$}
+O valor padrão do $\Lambda_{eff}^2$ considerando 
+$\sigma^{\qq\pi}_{tot}=(2/3)\sigma^{\qq n}_{tot}$ com $\sigma^{\qq\pi}_{tot}=30$ mb
+é $\Lambda_{eff}^2=0.1$ GeV$^2$.
+Os testes abaixo mostram que diminuir (aumentar) $\Lambda_{eff}$ também diminui (aumenta) $K_{abs}$.
+Eu usei valores extremos apenas para entender o comportamento.
+Notem que para $\Lambda_{eff}=1$ já temos valores negativos de $K_{abs}$ em $z=0.7$
+quando $Q^2=0$.
+
+\begin{figure}[!h]
+ \centering
+  \includegraphics[scale=0.37]{K_gp_exp25_iims_all_L_Q0}
+  \includegraphics[scale=0.37]{K_gp_exp25_iims_all_L_Q53}
+  \includegraphics[scale=0.37]{sigma_dados_iims_all_L}
+\end{figure}
+
+\begin{comment}
+\subsection{Variando $R_q$ (não imagino que venhamos a utilizar, deixei por completeza)}
+Nos testes abaixo eu usei os valores extremos de $R_q$ (2/3 e 1/3) 
+e também coloquei uma curva intermediária (1/2) na última linha de gráficos.
+Notem que, para ser coerênte com a descrição de $\Lambda_{eff}$,
+a alteração no $R_q$ também modificou o valor de $\Lambda_{eff}$ 
+para $\Lambda_{eff}^2(2/3)=0.098$, $\Lambda_{eff}^2(1/2)=0.109$ e 
+$\Lambda_{eff}^2(1/3)=0.122$.
+
+\begin{figure}[!h]
+ \centering
+  \includegraphics[scale=0.36]{sigma_dados_iims_all_rq}
+  
+  \includegraphics[scale=0.36]{sigma_dados_iims_all_rq_light}
+  \includegraphics[scale=0.36]{sigma_dados_iims_all_rq_covar}
+\end{figure}
+\end{comment}
+\newpage
+\subsection{Ajuste fino de $f_3(z)$}
+Na figura abaixo, o mesmo resultado já mostrado anteriormente,
+mas com um range que cobre apenas na região trabalhada no paper do DAlesio
+($z>0.5$), no qual o $f_3(z)$ faz uma ótima descrição dos dados.
+
+\begin{figure}[!h]
+  \centering\includegraphics[scale=0.4]{sigma_dados_exp25_scale.eps}   
+\end{figure}
+
+\indent Em discussões passadas falamos sobre o ajuste dos parâmetros $\Lambda_{eff}$
+e $R_{c}$ / $b$ (cov-Regge / $f_3$).
+Focando nos pontos experimentais na região $z>0.5$ 
+(barra cinza nas imagens abaixo), vemos que, se desejamos descrever bem esses pontos,
+não temos muito espaço para modificar esses parâmetros.\\
+\indent (figura da esquerda, com $\Lambda_{eff}^2 = 0.1$)
+Como já mostrado em outras figuras, com $R_{c}^2=0.05$ (``cov-Regge'' nos gráficos desse pdf),
+a curva só pega o ponto em $z=0.88$.
+Já com $R_{c}^2=b=0.3$ (``$f_3$'' nos gráficos) todos os pontos em $z>0.5$ são descritos.
+Lembrando que $f_3$ foi o modelo que melhor descreveu os dados da produção de $\rho$ com LN.\\
+\indent (figura da direita, com $R_c^2=0.3$)
+Aqui vemos o range no qual podemos variar $\Lambda_{eff}$ e ainda descrever os 4 pontos experimentais.
+
+\begin{figure}[!h]
+  \centering 
+  \includegraphics[scale=0.36]{sigma_dados_Rc2}
+  \includegraphics[scale=0.36]{sigma_dados_lambda_covar}   
+\end{figure}
+
+\vspace{2cm}
+Observação:
+Neste PDF há uma grande mistura entre as notações utizadas pelo D'Alesio 
+e por nós (papers anteriores). Eu arrumarei isso quando definirmos quais 
+figuras serão utilizadas no paper.
+\end{document}
