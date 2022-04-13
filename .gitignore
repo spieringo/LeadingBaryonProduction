@@ -1,0 +1,8 @@
+# ignore latex files
+latex/*.aux
+latex/*.dvi
+latex/*.fdb_latexmk
+latex/*.fls
+latex/*.log
+latex/*.out
+latex/*.synctex,gz
